@@ -36,17 +36,26 @@ public class FileService_Tests
         }
     }
 
+
+    //This test is checking if the LoadListFromFIle is working correctly, by saving a list in var content,
+    //saving it to a file and seraializing it to a list, then checking if the list is the same as the content
+
     [Fact]
     public void LoadListFromFile_ShouldLoadListFromAFile()
     {
         //Arrange
         var content = TestData.TwoContactsList;
         var fileName = "test.json";
-        File.WriteAllText(Path.Combine("ContactsTest", fileName), JsonSerializer.Serialize(content));
+        var directoryPath = "ContactsTest";
+        var filePath = Path.Combine(directoryPath, fileName);
 
+        if (!Directory.Exists(directoryPath))
+        {
+            Directory.CreateDirectory(directoryPath);
+        }
+        File.WriteAllText(Path.Combine(filePath), JsonSerializer.Serialize(content));
 
-        IFileService fileService = new FileService("ContactsTest", fileName);
-        fileService.SaveListToFile(content);
+        IFileService fileService = new FileService(directoryPath, fileName);
 
         try
         {
@@ -54,15 +63,29 @@ public class FileService_Tests
             var result = fileService.LoadListFromFile();
 
             //Assert
-            Assert.Equal(content, result);
+            Assert.Equal(content.Count, result.Count);
+            Assert.Equal(content[0].Id, result[0].Id);
+            Assert.Equal(content[1].Id, result[1].Id);
+            Assert.Equal(content[0].FirstName, result[0].FirstName);
+            Assert.Equal(content[1].FirstName, result[1].FirstName);
+            Assert.Equal(content[0].LastName, result[0].LastName);
+            Assert.Equal(content[1].LastName, result[1].LastName);
+            Assert.Equal(content[0].Email, result[0].Email);
+            Assert.Equal(content[1].Email, result[1].Email);
+            Assert.Equal(content[0].Phone, result[0].Phone);
+            Assert.Equal(content[1].Phone, result[1].Phone);
         }
         finally
         {
-            if (File.Exists(Path.Combine("ContactsTest", fileName)))
+            if (File.Exists(filePath))
             {
-                File.Delete(Path.Combine("ContactsTest", fileName));
+                File.Delete(filePath);
             }
-        }
+            if (Directory.Exists(directoryPath))
+            {
+                Directory.Delete(directoryPath);
+            }
 
+        }
     }
 }

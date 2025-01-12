@@ -3,6 +3,7 @@ using Business.Interfaces;
 using Business.Models;
 using Business.Services;
 using Moq;
+using System.Reflection;
 
 namespace Business.Tests.Services;
 
@@ -63,55 +64,90 @@ public class ContactService_Tests
     }
 
     [Fact]
-    public void UpdateContact_WhenCalled_ReturnsTrue()
+    public void UpdateContact_WhenContactExists_UpdatesAndSavesList()
     {
         // Arrange
-        var contact = new Contact
+        var existingContact = new Contact
         {
-            Id = "49f7b1b1",
-            FirstName = "John",
+            Id = "49f7b1b2",
+            FirstName = "Jane",
             LastName = "Doe",
-            Email = "john@doe.com",
-            Phone = "1234567890",
-            Address = "1234 Elm St",
-            PostalCode = "12345",
-            City = "Springfield"
+            Email = "ridah@gmail.com",
+            Phone = "0987654321",
+            Address = "4321 Oak St",
+            PostalCode = "54321",
+            City = "Shelbyville"
         };
+
+        var updatedContact = new Contact
+        {
+            Id = existingContact.Id,
+            FirstName = "Updated",
+            LastName = "Name",
+            Email = "ridah@gmail.com",
+            Phone = "0987654321",
+            Address = "4321 Oak St",
+            PostalCode = "54321",
+            City = "Shelbyville"
+        };
+
+        var contactsField = typeof(ContactService)
+            .GetField("_contacts", BindingFlags.NonPublic | BindingFlags.Instance);
+        var contacts = new List <Contact>{existingContact};
+        contactsField?.SetValue(_contactService, contacts);
+
 
         _fileServiceMock.Setup(fs => fs.SaveListToFile(It.IsAny<List<Contact>>()))
             .Returns(true);
 
         // Act
-        var result = _contactService.UpdateContact(contact);
+        var result = _contactService.UpdateContact(updatedContact);
 
+        //Compaing the updated contact with the existing contact
         // Assert
         Assert.True(result);
-        _fileServiceMock.Verify(fs => fs.SaveListToFile(It.IsAny<List<Contact>>()), Times.Once);
+        Assert.Equal("Updated", existingContact.FirstName);
+        Assert.Equal("Name", existingContact.LastName);
+        Assert.Equal("ridah@gmail.com", existingContact.Email);
+        Assert.Equal("0987654321", existingContact.Phone);
+        Assert.Equal("4321 Oak St", existingContact.Address);
+        Assert.Equal("54321", existingContact.PostalCode);
+        Assert.Equal("Shelbyville", existingContact.City);
+
+        //Checking if the list was saved with the new updated contact
+        _fileServiceMock.Verify(fs => fs.SaveListToFile(It.Is<List<Contact>>(list => list.Any(c => c.Id == updatedContact.Id
+           && c.FirstName == "Updated"))), Times.Once);
+
+
     }
 
+
+    //This test was written manually with a helping hand from GitHub Copilot
     [Fact]
-    public void DeleteContact_WhenCalled_ReturnsTrue()
+    public void DeleteContact_WhenContactExists_DeletesAndUpdatesList()
     {
         // Arrange
-        var contact = new Contact
-        {
-            Id = "49f7b1b1",
-            FirstName = "John",
-            LastName = "Doe",
-            Email = "john@doe.com",
-            Phone = "1234567890",
-            Address = "1234 Elm St",
-            PostalCode = "12345",
-            City = "Springfield"
-        };
+        var contact = TestData.TwoContactsList.First();
+
+        var contactsField = typeof(ContactService)
+            .GetField("_contacts", BindingFlags.NonPublic | BindingFlags.Instance);
+        var contacts = new List<Contact>(TestData.TwoContactsList);
+        contactsField?.SetValue(_contactService, contacts);
 
         _fileServiceMock.Setup(fs => fs.SaveListToFile(It.IsAny<List<Contact>>()))
             .Returns(true);
 
         // Act
         var result = _contactService.DeleteContact(contact);
+
+        // Assert
         Assert.True(result);
+        var updatedContacts = contactsField?.GetValue(_contactService) as List<Contact>;
+        Assert.NotNull(updatedContacts);
+        Assert.DoesNotContain(contact, updatedContacts);
+        _fileServiceMock.Verify(fs => fs.SaveListToFile(It.Is<List<Contact>>(list => !list.Any(c => c.Id == contact.Id))), Times.Once);
     }
+
 
     [Fact]
     public void GetAllContacts_ShouldReturnListOfContacts()

@@ -5651,23 +5651,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ridah\\.nuget\\packages\\": {},
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ridah\\source\\repos\\Pandodi\\ContactsApplication\\Business.Tests\\Business.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\Pandodi\\ContactsApplication\\Business.Tests\\Business.Tests.csproj",
       "projectName": "Business.Tests",
-      "projectPath": "C:\\Users\\ridah\\source\\repos\\Pandodi\\ContactsApplication\\Business.Tests\\Business.Tests.csproj",
-      "packagesPath": "C:\\Users\\ridah\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ridah\\source\\repos\\Pandodi\\ContactsApplication\\Business.Tests\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\source\\repos\\Pandodi\\ContactsApplication\\Business.Tests\\Business.Tests.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\source\\repos\\Pandodi\\ContactsApplication\\Business.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ridah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5683,8 +5683,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\ridah\\source\\repos\\Pandodi\\ContactsApplication\\Business\\Business.csproj": {
-              "projectPath": "C:\\Users\\ridah\\source\\repos\\Pandodi\\ContactsApplication\\Business\\Business.csproj"
+            "C:\\Users\\Admin\\source\\repos\\Pandodi\\ContactsApplication\\Business\\Business.csproj": {
+              "projectPath": "C:\\Users\\Admin\\source\\repos\\Pandodi\\ContactsApplication\\Business\\Business.csproj"
             }
           }
         }
@@ -5697,7 +5697,7 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       },
       "SdkAnalysisLevel": "9.0.100"
     },
@@ -5742,30 +5742,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.Net.Http' 4.3.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-7jgj-8wvc-jh57",
-      "libraryId": "System.Net.Http",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.Text.RegularExpressions' 4.3.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-cmhx-cq75-c4mj",
-      "libraryId": "System.Text.RegularExpressions",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }

@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\ridah\source\repos\Pandodi\ContactsApplication\ContactsAppWPF\obj\Debug\net8.0-windows\
+C:\Users\Admin\source\repos\Pandodi\ContactsApplication\ContactsAppWPF\obj\Debug\net8.0-windows\
 ContactsAppWPF
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\ridah\source\repos\Pandodi\ContactsApplication\ContactsAppWPF\App.xaml
+C:\Users\Admin\source\repos\Pandodi\ContactsApplication\ContactsAppWPF\App.xaml
 6674106609
 
 15-1876035486
-228-1954145736
+228-845045202
 MainWindow.xaml;Views\AddContactView.xaml;Views\ContactDetailsView.xaml;Views\ContactListView.xaml;Views\EditContactView.xaml;Views\MainMenuView.xaml;
 
 False
