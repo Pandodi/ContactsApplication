@@ -19,7 +19,7 @@ public class FileService : IFileService
         _jsonSerializerOptions = new JsonSerializerOptions { WriteIndented = true };
     }
 
-    public void SaveListToFile(List<Contact> list)
+    public bool SaveListToFile(List<Contact> list)
     {
         try
         {
@@ -28,10 +28,12 @@ public class FileService : IFileService
 
             var json = JsonSerializer.Serialize(list, _jsonSerializerOptions);
             File.WriteAllText(_filePath, json);
+            return true;
         }
         catch (Exception ex)
         {
             Debug.WriteLine(ex.Message);
+            return false;
         }
     }
 

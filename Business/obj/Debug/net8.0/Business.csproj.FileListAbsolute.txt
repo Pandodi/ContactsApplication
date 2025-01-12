@@ -9,3 +9,15 @@ C:\Users\Admin\source\repos\ContactsApplication\Business\obj\Debug\net8.0\Busine
 C:\Users\Admin\source\repos\ContactsApplication\Business\obj\Debug\net8.0\refint\Business.dll
 C:\Users\Admin\source\repos\ContactsApplication\Business\obj\Debug\net8.0\Business.pdb
 C:\Users\Admin\source\repos\ContactsApplication\Business\obj\Debug\net8.0\ref\Business.dll
+C:\Users\ridah\source\repos\Pandodi\ContactsApplication\Business\bin\Debug\net8.0\Business.deps.json
+C:\Users\ridah\source\repos\Pandodi\ContactsApplication\Business\bin\Debug\net8.0\Business.dll
+C:\Users\ridah\source\repos\Pandodi\ContactsApplication\Business\bin\Debug\net8.0\Business.pdb
+C:\Users\ridah\source\repos\Pandodi\ContactsApplication\Business\obj\Debug\net8.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ridah\source\repos\Pandodi\ContactsApplication\Business\obj\Debug\net8.0\Business.AssemblyInfoInputs.cache
+C:\Users\ridah\source\repos\Pandodi\ContactsApplication\Business\obj\Debug\net8.0\Business.AssemblyInfo.cs
+C:\Users\ridah\source\repos\Pandodi\ContactsApplication\Business\obj\Debug\net8.0\Business.csproj.CoreCompileInputs.cache
+C:\Users\ridah\source\repos\Pandodi\ContactsApplication\Business\obj\Debug\net8.0\Business.sourcelink.json
+C:\Users\ridah\source\repos\Pandodi\ContactsApplication\Business\obj\Debug\net8.0\Business.dll
+C:\Users\ridah\source\repos\Pandodi\ContactsApplication\Business\obj\Debug\net8.0\refint\Business.dll
+C:\Users\ridah\source\repos\Pandodi\ContactsApplication\Business\obj\Debug\net8.0\Business.pdb
+C:\Users\ridah\source\repos\Pandodi\ContactsApplication\Business\obj\Debug\net8.0\ref\Business.dll

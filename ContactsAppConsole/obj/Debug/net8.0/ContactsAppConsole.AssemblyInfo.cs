@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ContactsAppConsole")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+304baad7ba1c98e8c1b40aaa8f9a4f57ac596b91")]
 [assembly: System.Reflection.AssemblyProductAttribute("ContactsAppConsole")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ContactsAppConsole")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -11,7 +11,7 @@ using Microsoft.Extensions.Hosting;
 IHost host = Host.CreateDefaultBuilder()
     .ConfigureServices(services =>
     {
-        services.AddSingleton<IFileService, FileService>();
+        services.AddSingleton<IFileService>(new FileService("contact.json"));
         services.AddSingleton<IContactService, ContactService>();
         services.AddSingleton<MenuDialogs>();
     })

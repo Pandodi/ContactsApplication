@@ -4,5 +4,5 @@ namespace Business.Interfaces;
 
 public interface IFileWriter
 {
-    public void SaveListToFile(List<Contact> list);
+    public bool SaveListToFile(List<Contact> list);
 }

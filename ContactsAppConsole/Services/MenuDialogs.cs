@@ -16,8 +16,8 @@ public class MenuDialogs(IContactService contactService) : IMenuDialogs
         do
         {
             Console.Clear();
-            Console.WriteLine("1. View all current contacts");
-            Console.WriteLine("2. Add contact to list");
+            Console.WriteLine("1. Add contact to list");
+            Console.WriteLine("2. View all current contacts");            
             Console.WriteLine("3. Quit app");
             Console.WriteLine("______________________________");
             Console.WriteLine("Enter option: ");
@@ -27,11 +27,11 @@ public class MenuDialogs(IContactService contactService) : IMenuDialogs
             switch (option.ToLower())
             {
                 case "1":
-                    ViewContactListOption();
+                    AddContactOption();
                     break;
 
                 case "2":
-                    AddContactOption();
+                    ViewContactListOption();
                     break;
 
                 case "3":
