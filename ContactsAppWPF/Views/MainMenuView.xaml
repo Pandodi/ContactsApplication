@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="ContactsAppWPF.Views.MainMenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ContactsAppWPF.Views"
+             xmlns:viewmodels="clr-namespace:ContactsAppWPF.ViewModels"
+             d:DataContext="{d:DesignInstance Type=viewmodels:MainMenuViewModel}"
+             Background="AliceBlue"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="300">
+    
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <Label x:Name="Manrope" Content="Contacts" FontSize="24" FontFamily="pack://application:,,,/ContactsAppWPF;component/Resources/Fonts/#Manrope"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <Button x:Name="AddContact" Command="{Binding GoToAddContactCommand}" Background="AntiqueWhite" FontFamily="pack://application:,,,/ContactsAppWPF;component/Resources/Fonts/#Manrope" Content="Add Contact" Padding="5" Margin="0 0 0 15"/>
+            <Button x:Name="ViewContact" Command="{Binding GoToContactListCommand}" Background="AntiqueWhite" FontFamily="pack://application:,,,/ContactsAppWPF;component/Resources/Fonts/#Manrope" Content="View Contacts" Padding="5" Margin="0 0 0 15" />
+            <Button x:Name="QuitApp" Command="{Binding QuitAppCommand}" Background="AntiqueWhite" FontFamily="pack://application:,,,/ContactsAppWPF;component/Resources/Fonts/#Manrope" Content="Quit App" Padding="5" Margin="0 0 0 15" />
+        </StackPanel>
+
+    </Grid>
+</UserControl>
